@@ -7,7 +7,7 @@
   - three-tier-app_repo
 
 - name: deploy haproxy
-  hosts: apps
+  hosts: frontends
   gather_facts: false
   become: true
   roles:
