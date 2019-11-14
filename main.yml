@@ -1,4 +1,12 @@
 ---
+- name: in memory inventory
+  hosts: workstation
+  gather_facts: false
+  become: true
+  roles:
+  -  in_mem_inventory 
+
+
 - name: configuration
   hosts: all
   gather_facts: false
@@ -7,7 +15,7 @@
   - three-tier-app_repo
 
 - name: deploy haproxy
-  hosts: frontends
+  hosts: frontend
   gather_facts: false
   become: true
   roles:
